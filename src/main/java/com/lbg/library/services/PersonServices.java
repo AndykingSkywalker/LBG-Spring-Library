@@ -54,6 +54,10 @@ public class PersonServices {
 			existing.setAge(personDetails.getAge());
 		}
 
+		if (personDetails.getItems() != null) {
+			existing.setItems(personDetails.getItems());
+		}
+
 		Person updated = this.repo.save(existing);
 		return ResponseEntity.ok(updated);
 	}

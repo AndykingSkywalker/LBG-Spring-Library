@@ -19,6 +19,8 @@ public class Item {
 
 	private String title;
 
+	private boolean checkedIn;
+
 	@JsonBackReference
 	@ManyToOne
 	private Person person;
@@ -58,6 +60,14 @@ public class Item {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public boolean isCheckedIn() {
+		return checkedIn;
+	}
+
+	public void setCheckedIn(boolean checkedIn) {
+		this.checkedIn = checkedIn;
 	}
 
 }

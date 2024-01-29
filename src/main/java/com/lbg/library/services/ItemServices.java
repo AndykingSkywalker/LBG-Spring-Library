@@ -54,6 +54,12 @@ public class ItemServices {
 			existing.setTitle(itemDetails.getTitle());
 		}
 
+		if (itemDetails.isCheckedIn()) {
+			existing.setCheckedIn(true);
+		} else {
+			existing.setCheckedIn(false);
+		}
+
 		Item updated = this.repo.save(existing);
 		return ResponseEntity.ok(updated);
 	}
